@@ -19,7 +19,7 @@ load_clf = pd.read_pickle(PATH+"LGBMClassifier.pkl")
 #Premiers pas sur l'API
 @app.route('/')
 def index():
-    return 'Bonjouur, Bienvenue '
+    return 'Bonjouur, Bienvenue à Mon Api!!'
 
 #C
 @app.route('/credit/<id_client>', methods=["GET"])
