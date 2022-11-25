@@ -1,5 +1,6 @@
 import pandas as pd
 from flask import Flask, jsonify
+import pickle
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ df = pd.read_pickle(PATH+'data_test.pkl')
 print('df shape = ', df.shape)
 
 #Chargement du modèle
-load_clf = pd.read_pickle(PATH+"LGBMClassifier.pkl")
+load_clf = pickle.load(open(PATH+"LGBMClassifier.pkl",'rb'))
 
 #Premiers pas sur l'API
 @app.route('/')
