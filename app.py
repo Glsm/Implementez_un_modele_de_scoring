@@ -37,7 +37,7 @@ def credit(id_client):
     prediction = load_clf.predict(X)
     pred_proba = {
         'prediction': int(prediction),
-        'proba': float(proba[0][0])
+        'proba': float(proba[0][0].round(3))
     }
 
     print('Nouvelle Prédiction : \n', pred_proba)
