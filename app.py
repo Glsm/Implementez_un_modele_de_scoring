@@ -1,6 +1,5 @@
 import pandas as pd
 from flask import Flask, jsonify
-import joblib
 
 app = Flask(__name__)
 
