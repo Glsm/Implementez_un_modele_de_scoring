@@ -185,7 +185,7 @@ main_page = """
 st.markdown(main_page, unsafe_allow_html=True)
 
 
-st.write('--hghghgh-')
+st.write('--*Ce tableau de bord est produit à partir du modèle créé à partir des données historiques des clients.*-')
 
 #N° client Client sélectionné
 st.write("N° client Sélectionné :", id_client)
