@@ -25,8 +25,10 @@ with open('style.css') as f:
 #Chargement des données
 PATH = './'
 df = pd.read_pickle(PATH+'data_test.pkl')
-data_train = pd.read_pickle(PATH+'application_train.pkl')
-data_test = pd.read_pickle(PATH+'app_test.pkl')
+data_train =pd.read_parquet(PATH+'application_train.parquet')
+ #pd.read_pickle(PATH+'application_train.pkl')
+data_test = pd.read_parquet(PATH+'application_test.parquet')
+#pd.read_pickle(PATH+'app_test.pkl')
 description = pd.read_csv(PATH+'HomeCredit_columns_description.csv', 
                                       usecols=['Row', 'Description'], \
                                   index_col=0, encoding='unicode_escape')
@@ -334,19 +336,19 @@ if (int(id_client) in id_list):
             
             if (feature in numerical_features):
                 
-                plot_distribution(data_train, feature, client_info[feature], var)  
+                 plot_distribution(data_train, feature, client_info[feature], var)  
                 
             elif (feature in rotate_label):
                 
-                univariate_categorical(data_train, feature,client_info[feature], var, False, True)
+                 univariate_categorical(data_train, feature,client_info[feature], var, False, True)
             elif (feature in horizontal_layout):
                
                 
-                univariate_categorical(data_train, feature,client_info[feature], var, False, True, True)
+                 univariate_categorical(data_train, feature,client_info[feature], var, False, True, True)
                 
             else:
                 
-                univariate_categorical(data_train, feature, client_info[feature], var)
+                 univariate_categorical(data_train, feature, client_info[feature], var)
 
        
     if (fi_general):
