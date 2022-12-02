@@ -307,9 +307,9 @@ if (int(id_client) in id_list):
             #personal_info_df["NB ANNEES EMPLOI"] = (personal_info_df["NB ANNEES EMPLOI"]/365*(-1)).round().astype(int)
 
 
-            filtered = st.multiselect("Choisir les informations à afficher",options=list(personal_info_df.columns),
+            filtered = st.multiselect("Choisir les informations à afficher",options=list(personal_info_cols.columns),
                                       default=list(default_list))
-            df_info = personal_info_df[filtered] 
+            df_info = personal_info_cols[filtered] 
             df_info['SK_ID_CURR'] = client_info['SK_ID_CURR']
             df_info = df_info.set_index('SK_ID_CURR')
 
