@@ -294,13 +294,13 @@ if (int(id_client) in id_list):
 
         with st.spinner('Chargement des informations relatives au client...'):
 
-            personal_info_cols["AGE"]=[(personal_info_cols["AGE"]/365*(-1))].round().astype(int)
+            #personal_info_cols["AGE"]=[(personal_info_cols["AGE"]/365*(-1))].round().astype(int)
 
-            personal_info_df = client_info[list(personal_info_cols.keys())]
+            #personal_info_df = client_info[list(personal_info_cols.keys())]
             
 
 
-            personal_info_df.rename(columns=personal_info_cols, inplace=True)
+            #personal_info_df.rename(columns=personal_info_cols, inplace=True)
 
 
             #personal_info_df["AGE"] = (personal_info_df["AGE"]/365*(-1)).round().astype(int)
