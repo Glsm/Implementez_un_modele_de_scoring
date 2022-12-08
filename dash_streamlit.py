@@ -95,10 +95,10 @@ def univariate_categorical(applicationDF,feature,client_feature_val,titre,ylog=F
             cat_perc["TARGET"] = cat_perc["TARGET"]*100
             cat_perc.sort_values(by='TARGET', ascending=False, inplace=True)
 
-            if(horizontal_layout):
-                fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(3,3))
+              if(horizontal_layout):
+                fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12,5))
             else:
-                fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=(3,3))
+                fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=(20,24))
 
             # 1. Subplot 1: Count plot of categorical column
             sns.set_palette("Set2")
@@ -255,7 +255,7 @@ if (int(id_client) in id_list):
             X = df[df['SK_ID_CURR']==int(id_client)]
             X = X[relevant_features]
 
-            fig, ax = plt.subplots(figsize=(10, 10))
+            fig, ax = plt.subplots(figsize=(15, 15))
             explainer = shap.TreeExplainer(model)
             shap_values = explainer.shap_values(X)
             shap.summary_plot(shap_values[0], X, plot_type ="bar",max_display=number, color_bar=True, plot_size=(4, 4))
@@ -300,7 +300,7 @@ if (int(id_client) in id_list):
             personal_info_df.rename(columns=personal_info_cols, inplace=True)
 
             personal_info_df["AGE"] = int(round(personal_info_df["AGE"]/365*(-1)))
-            personal_info_df["NB ANNEES EMPLOI"] =             int(round(personal_info_df["NB ANNEES EMPLOI"]/365*(-1)))
+            personal_info_df["NB ANNEES EMPLOI"] = int(round(personal_info_df["NB ANNEES EMPLOI"]/365*(-1)))
 
 
             filtered = st.multiselect("Choisir les informations à afficher",options=list(personal_info_df.columns),
@@ -310,7 +310,7 @@ if (int(id_client) in id_list):
             df_info = df_info.set_index('SK_ID_CURR')
 
             st.table(df_info.astype(str).T)
-            show_all_info = st.checkbox("Afficher toutes les informations (dataframe brute)")
+            show_all_info = st.checkbox("Afficher toutes les informations")
             if (show_all_info):
                 st.dataframe(client_info)
 
@@ -321,9 +321,8 @@ if (int(id_client) in id_list):
     if (show_client_comparison):
         st.header('‍ Comparaison aux autres clients')
             #st.subheader("Comparaison avec l'ensemble des clients")
-        with st.expander(" Explication de la comparaison faite"):
-            st.write("Lorsqu'une variable est sélectionnée, un graphique montrant la distribution de cette variable selon la classe (remboursé ou défaillant) sur l'ensemble des clients (dont on connait l'état de remboursement de crédit) est affiché avec une matérialisation du positionnement du client actuel.") 
-
+      
+            
         with st.spinner('Chargement de la comparaison liée à la variable sélectionnée'):
 
             var = st.selectbox("Sélectionner une variable",list(personal_info_cols.values()))
