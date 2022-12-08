@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 PATH = ''
 
-df = pd.read_pickle(PATH+'data_test.pkl')
+df = pd.read_csv(PATH+'data_test.csv')
 print('df shape = ', df.shape)
 
 #Chargement du modèle
-load_clf = pickle.load(open(PATH+"LGBMClassifier.pkl",'rb'))
+load_clf = joblib.load(PATH+r"LGBMClassifier.joblib")
 
 #Premiers pas sur l'API
 @app.route('/')
