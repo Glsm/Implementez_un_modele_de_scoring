@@ -11,6 +11,7 @@ import math
 from urllib.request import urlopen
 import json
 import requests
+import joblib
 
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
@@ -24,7 +25,7 @@ with open('style.css') as f:
 
 #Chargement des données
 PATH = './'
-df = pd.read_pickle(PATH+'data_test.pkl')
+df = pd.read_csv(PATH+'data_test.csv')
 data_train =pd.read_parquet(PATH+'application_train.parquet')
  #pd.read_pickle(PATH+'application_train.pkl')
 data_test = pd.read_parquet(PATH+'application_test.parquet')
@@ -34,7 +35,7 @@ description = pd.read_csv(PATH+'HomeCredit_columns_description.csv',
                                   index_col=0, encoding='unicode_escape')
 
 #Chargement du modèle
-model =pickle.load(open(PATH+"LGBMClassifier.pkl",'rb'))
+model = joblib.load(PATH+r"LGBMClassifier.joblib")
 
 
 #Les fonctions communes
