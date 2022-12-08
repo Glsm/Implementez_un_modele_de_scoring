@@ -295,17 +295,12 @@ if (int(id_client) in id_list):
 
         with st.spinner('Chargement des informations relatives au client...'):
 
-            #personal_info_cols["AGE"]=[(personal_info_cols["AGE"]/365*(-1))].round().astype(int)
+            personal_info_df = client_info[list(personal_info_cols.keys())]
+               
+            personal_info_df.rename(columns=personal_info_cols, inplace=True)
 
-            #personal_info_df = client_info[list(personal_info_cols.keys())]
-            
-
-
-            #personal_info_df.rename(columns=personal_info_cols, inplace=True)
-
-
-            #personal_info_df["AGE"] = (personal_info_df["AGE"]/365*(-1)).round().astype(int)
-            #personal_info_df["NB ANNEES EMPLOI"] = (personal_info_df["NB ANNEES EMPLOI"]/365*(-1)).round().astype(int)
+            personal_info_df["AGE"] = int(round(personal_info_df["AGE"]/365*(-1)))
+            personal_info_df["NB ANNEES EMPLOI"] =             int(round(personal_info_df["NB ANNEES EMPLOI"]/365*(-1)))
 
 
             filtered = st.multiselect("Choisir les informations à afficher",options=list(personal_info_df.columns),
