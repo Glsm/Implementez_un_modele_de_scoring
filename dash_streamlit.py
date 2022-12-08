@@ -95,7 +95,7 @@ def univariate_categorical(applicationDF,feature,client_feature_val,titre,ylog=F
             cat_perc["TARGET"] = cat_perc["TARGET"]*100
             cat_perc.sort_values(by='TARGET', ascending=False, inplace=True)
 
-              if(horizontal_layout):
+            if(horizontal_layout):
                 fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12,5))
             else:
                 fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=(20,24))
