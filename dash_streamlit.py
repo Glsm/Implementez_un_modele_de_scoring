@@ -1,3 +1,5 @@
+# https://glsm-p7-openclassroom-dash-streamlit-sg9fg7.streamlit.app
+
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -168,6 +170,7 @@ with st.sidebar:
     show_client_comparison = st.checkbox("Comparer aux autres clients")
     fi_general = st.checkbox("La feature importance globale")
 
+ 
 
 ### # Main page 🎈
 
@@ -350,4 +353,3 @@ st.sidebar.markdown('''
 ---
 Created by GLSM
 ''')
-
