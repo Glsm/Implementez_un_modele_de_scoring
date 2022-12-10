@@ -170,7 +170,6 @@ with st.sidebar:
     show_client_comparison = st.checkbox("Comparer aux autres clients")
     fi_general = st.checkbox("La feature importance globale")
 
- 
 
 ### # Main page 🎈
 
@@ -243,21 +242,21 @@ if (int(id_client) in id_list):
 
 #Local Feature Importance
 
-        #show_local_feature_importance = st.checkbox(
-               # "Afficher les variables ayant le plus contribué à la décision du modèle ?")
-       # if (show_local_feature_importance):
-            #shap.initjs()
-           # number = st.slider('Sélectionner le nombre de feautures à afficher ?',2, 20, 8)
+        show_local_feature_importance = st.checkbox(
+                "Afficher les variables ayant le plus contribué à la décision du modèle ?")
+        if (show_local_feature_importance):
+            shap.initjs()
+            number = st.slider('Sélectionner le nombre de feautures à afficher ?',2, 20, 8)
 
-            #X = df[df['SK_ID_CURR']==int(id_client)]
-           # X = X[relevant_features]
+            X = df[df['SK_ID_CURR']==int(id_client)]
+            X = X[relevant_features]
 
-           # fig, ax = plt.subplots(figsize=(15, 15))
-            #explainer = shap.TreeExplainer(model)
-           # shap_values = explainer.shap_values(X)
-           # shap.summary_plot(shap_values[0], X, plot_type ="bar",max_display=number, color_bar=True, plot_size=(4, 4))
+            fig, ax = plt.subplots(figsize=(15, 15))
+            explainer = shap.TreeExplainer(model)
+            shap_values = explainer.shap_values(X)
+            shap.summary_plot(shap_values[0], X, plot_type ="bar",max_display=number, color_bar=True, plot_size=(4, 4))
 
-           # st.pyplot(fig)
+            st.pyplot(fig)
             
     personal_info_cols = {
             'CODE_GENDER': "GENRE",
