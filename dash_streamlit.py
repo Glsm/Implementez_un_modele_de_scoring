@@ -168,12 +168,7 @@ with st.sidebar:
     show_client_comparison = st.checkbox("Comparer aux autres clients")
     fi_general = st.checkbox("La feature importance globale")
 
-    #if(st.checkbox("Description des features")):
-       # list_features = description.index.to_list()
-        #list_features = list(dict.fromkeys(list_features))
-       # feature = st.selectbox('Sélectionner une variable',  sorted(list_features))
-       # desc = description['Description'].loc[description.index == feature][:1]
-       # st.markdown('**{}**'.format(desc.iloc[0]))
+  
 
 ### # Main page 🎈
 
@@ -246,8 +241,8 @@ if (int(id_client) in id_list):
 
 #Local Feature Importance
 
-        show_local_feature_importance = st.checkbox(
-                "Afficher les variables ayant le plus contribué à la décision du modèle ?")
+        #show_local_feature_importance = st.checkbox(
+               # "Afficher les variables ayant le plus contribué à la décision du modèle ?")
         if (show_local_feature_importance):
             shap.initjs()
             number = st.slider('Sélectionner le nombre de feautures à afficher ?',2, 20, 8)
