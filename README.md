@@ -79,6 +79,10 @@ Pour cela nous avons utilisé une librairie spécialisée de type Shap afin de f
 
 ✓ Pour aller plus loin, la partie prétraitement du jeu de données a été abordée superficiellement en réutilisant un kernel de Kaggle basé uniquement sur une table du jeu de données. Il y aura probablement une opportunité d'améliorer la modélisation en créant de nouvelles fonctionnalités en collaboration avec les équipes commerciales ainsi qu'en utilisant d'autres fonctionnalités des données fournies.
 
+## Pour plus d'informations
+Veuillez consulter mon analyse complète dans [mon Jupyter Notebook](./Notebook_Modelisation.ipynb) ou ma [présentation](./Presentation.pdf). Pour toute question supplémentaire, veuillez contacter avec moi à gulsumkapanoglu@gmail.com.
+
+
 Ce travail a été réalisé lors du projet 7 de ma formation Centrale Supèlec et OpenClassrooms de Data Scientist durant le mois de Novembre 2022.
 
 ## 
