@@ -88,7 +88,7 @@ Choix d'une métrique adaptée à un problème métier (F Beta Score)
 Construction d'un modèle de scoring supervisé
 Mise en place d'une API Flask pour appeler le modèle de prédiction
 Construction d'un dashboard interactif à destination des gestionnaires de relation client (Streamlit)
-Utilisation de gitlab pour versioning
+Utilisation de github pour versioning
 Source des données : https://www.kaggle.com/c/home-credit-default-risk/data
 
 ## Compétences évaluées
