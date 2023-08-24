@@ -1,6 +1,5 @@
 # Implémentez un modèle de scoring
 ## Projet7-Openclassrooms
-
 &nbsp;
 **Author:** Gulsum Kapanoglu
 ***
@@ -82,7 +81,7 @@ Pour cela nous avons utilisé une librairie spécialisée de type Shap afin de f
 
 Ce travail a été réalisé lors du projet 7 de ma formation Centrale Supèlec et OpenClassrooms de Data Scientist durant le mois de Novembre 2022.
 
-## Description du projet
+## 
 Supervised learning sur un jeu de données déséquilibré (pénalisation des classes par Sample Weights et SMOTE)
 Choix d'une métrique adaptée à un problème métier (F Beta Score)
 Construction d'un modèle de scoring supervisé
