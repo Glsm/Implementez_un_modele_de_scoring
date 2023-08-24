@@ -1,15 +1,10 @@
 # Implémentez un modèle de scoring
-
 ## Projet7-Openclassrooms
 
 &nbsp;
-
 **Author:** Gulsum Kapanoglu
-
 ***
-<img src="pret.png">
-
-
+                                <img src="pret.png">
 ## Description de projet!
 
 Le projet consiste à développer pour la société « Prêt à Dépenser », une société de crédit de consommation, un modèle de scoring de la probabilité de défaut de paiement d’un client avec pas ou peu d’historique de prêt. Il s’agit donc d’un problème de classification binaire supervisée dans lequel la variable cible (TARGET) à prédire vaudra 0 si le client est solvable et 1 s’il ne l’est pas.
